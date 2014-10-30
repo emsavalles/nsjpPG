@@ -63,7 +63,18 @@ lo siguiente:
                 $("#container").css('left',"0px");
             }                
             });
-                   
+///////////////////////////////////////
+            handleDocumentWithURL(
+                    function() {console.log('success');},
+                    function(error) {
+                        console.log('failure');
+                        if(error == 53) {
+                            console.log('No app that handles this file type.');
+                        }
+                    },
+                    'http://www.emsavalles.com/nsjp/pdf/562.pdf'
+            );
+///////////////////////////////////////
         });
         </script>
         

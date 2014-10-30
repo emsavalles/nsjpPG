@@ -23,10 +23,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="32" selection-start="1846" selection-end="1853" vertical-scroll-proportion="-11.769231" vertical-offset="204" max-vertical-offset="1309">
+            <state line="74" column="63" selection-start="3337" selection-end="3337" vertical-scroll-proportion="0.91052634" vertical-offset="739" max-vertical-offset="1496">
               <folding>
                 <element signature="n#style#0;n#a#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -43,10 +43,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="config.xml" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="config.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/config.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="64" column="0" selection-start="4478" selection-end="4478" vertical-scroll-proportion="0.5419463" vertical-offset="765" max-vertical-offset="2159">
+            <state line="64" column="46" selection-start="4520" selection-end="4520" vertical-scroll-proportion="0.0" vertical-offset="714" max-vertical-offset="2159">
               <folding />
             </state>
           </provider>
@@ -65,9 +65,9 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/www/index.html" />
         <option value="$PROJECT_DIR$/www/css/main.css" />
         <option value="$PROJECT_DIR$/www/config.xml" />
+        <option value="$PROJECT_DIR$/www/index.html" />
       </list>
     </option>
   </component>
@@ -215,15 +215,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/www/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="32" selection-start="1846" selection-end="1853" vertical-scroll-proportion="-11.769231" vertical-offset="204" max-vertical-offset="1309">
-          <folding>
-            <element signature="n#style#0;n#a#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/css/main.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="17" column="17" selection-start="316" selection-end="316" vertical-scroll-proportion="0.0" vertical-offset="122" max-vertical-offset="782">
@@ -233,8 +224,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/config.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="0" selection-start="4478" selection-end="4478" vertical-scroll-proportion="0.5419463" vertical-offset="765" max-vertical-offset="2159">
+        <state line="64" column="46" selection-start="4520" selection-end="4520" vertical-scroll-proportion="0.0" vertical-offset="714" max-vertical-offset="2159">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="74" column="63" selection-start="3337" selection-end="3337" vertical-scroll-proportion="0.91052634" vertical-offset="739" max-vertical-offset="1496">
+          <folding>
+            <element signature="n#style#0;n#a#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

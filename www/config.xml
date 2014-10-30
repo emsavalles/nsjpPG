@@ -61,8 +61,8 @@
     <gap:plugin name="org.apache.cordova.network-information" />
     <gap:plugin name="org.apache.cordova.splashscreen" />
     <gap:plugin name="org.apache.cordova.vibration" />
-    
 
+    <gap:plugin name="ch.ti8m.documenthandler"/>
 
 
     <!-- Third party plugins -->
