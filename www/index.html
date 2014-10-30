@@ -29,7 +29,7 @@
          </ul>
      </div>
 <div id="content" class="content">
-    <a href="#" id="descarga">descarga</a>
+    <a href="#" id="descarga">descarga1</a>
 <p>
 Dr. Fernando Toranzo Fern�ndez, Gobernador Constitucional
 del Estado Libre y Soberano de San Luis Potos�, a sus
@@ -68,16 +68,16 @@ lo siguiente:
             $('#descarga').on('click',function(){
               try{
                   handleDocumentWithURL(
-                          function() {console.log('success');},
+                          function() {alert('success');},
                           function(error) {
-                              console.log('failure');
+                              alert('failure');
                               if(error == 53) {
-                                  console.log('No app that handles this file type.');
+                                  alert('No app that handles this file type.');
                               }
                           },
                           'http://www.emsavalles.com/nsjp/pdf/562.pdf'
                   );
-                  alert(1);
+                  //alert(1);
               }
               catch(e){
                   alert(e.message);
