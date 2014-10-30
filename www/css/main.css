@@ -17,7 +17,7 @@ h1, .h1, h2, .h2, h3, .h3 {
 .content{
     padding:0 2%;
 }
-.cabezal h1{font-size:1.2em; text-align:center; margin-left:10% !important;}
+.cabezal h1{ text-align:center; margin-left:10% !important;}
 #menuslide {color:#fff}
 
 .bar {

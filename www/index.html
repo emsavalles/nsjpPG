@@ -39,54 +39,12 @@ lo siguiente:
 </div> 
         </div>
 
-
         <script type="text/javascript" src="cordova.js"></script>
         <script src="js/jquery.js"></script>
         <script src="js/bootstrap.min.js"></script>
-        <script>
-        $(document).ready(function(){
-            $("#sidebar").css('left',"-200px");
-            $('#menuslide').on('click',function(){
-                
-            var sidebar = $("#sidebar");
-            
-            console.log(sidebar.css('left'));
-           
-            if(sidebar.css('left') == "-200px")
-            {
-                sidebar.css('left',"0px");
-                $("#container").css('left',"200px");
-                
-            }
-            else
-            {
-                sidebar.css('left',"-200px");
-                $("#container").css('left',"0px");
-            }                
-            });
-///////////////////////////////////////
-            $('#descarga').on('click',function(){
-              try{
-                  handleDocumentWithURL(
-                          function() {alert('success');},
-                          function(error) {
-                              alert('failure');
-                              if(error == 53) {
-                                  alert('No app that handles this file type.');
-                              }
-                          },
-                          'http://www.emsavalles.com/nsjp/pdf/562.pdf'
-                  );
-                  //alert(1);
-              }
-              catch(e){
-                  alert(e.message);
-              }
-            });
-
-///////////////////////////////////////
-        });
-        </script>
+        <script type="text/javascript" src="js/index.js"></script>        
+        <script type="text/javascript">app.initialize();</script>
+        <script src="js/main.js"></script>
         
     </body>
 </html>
