@@ -1,0 +1,36 @@
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+body{ margin:0; padding:0;}
+h1, .h1, h2, .h2, h3, .h3 {
+    margin-bottom: 10px;
+}
+.cabezal{
+    margin: 0;
+    background-color: #426660;
+    color:#fff;
+    min-height:44px;
+}
+.cabezal h1{font-size:1.5em; text-align:center}
+#menuslide {color:#fff}
+
+.bar {
+    height: auto !important;
+}
+.bar-header {
+    border-bottom-width: 1px;
+    border-top-width: 0;
+    top: 0;
+}
+#sidebar{
+    position: fixed; 
+    display: inline-block;
+     height: 100%; 
+     width: 200px; 
+     left: -200px;
+      background-color: #ffffff; 
+      transition: all 0.5s ease-in-out;
+}
