@@ -62,9 +62,7 @@
     <gap:plugin name="org.apache.cordova.splashscreen" />
     <gap:plugin name="org.apache.cordova.vibration" />
     
-    <gap:plugin name="org.apache.cordova.filetransfer.FileTransfer" />
-    <gap:plugin name="org.apache.cordova.core.file.FileSystem" />
-      
+
 
 
     <!-- Third party plugins -->

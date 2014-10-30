@@ -34,10 +34,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.css" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="main.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/css/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="17" selection-start="316" selection-end="316" vertical-scroll-proportion="0.27422002" vertical-offset="122" max-vertical-offset="782">
+            <state line="17" column="17" selection-start="316" selection-end="316" vertical-scroll-proportion="0.0" vertical-offset="122" max-vertical-offset="782">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config.xml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/www/config.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="64" column="0" selection-start="4478" selection-end="4478" vertical-scroll-proportion="0.5419463" vertical-offset="765" max-vertical-offset="2159">
               <folding />
             </state>
           </provider>
@@ -58,6 +67,7 @@
       <list>
         <option value="$PROJECT_DIR$/www/index.html" />
         <option value="$PROJECT_DIR$/www/css/main.css" />
+        <option value="$PROJECT_DIR$/www/config.xml" />
       </list>
     </option>
   </component>
@@ -216,7 +226,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/css/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="17" selection-start="316" selection-end="316" vertical-scroll-proportion="0.27422002" vertical-offset="122" max-vertical-offset="782">
+        <state line="17" column="17" selection-start="316" selection-end="316" vertical-scroll-proportion="0.0" vertical-offset="122" max-vertical-offset="782">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="64" column="0" selection-start="4478" selection-end="4478" vertical-scroll-proportion="0.5419463" vertical-offset="765" max-vertical-offset="2159">
           <folding />
         </state>
       </provider>
