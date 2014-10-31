@@ -13,7 +13,7 @@
     <body style="padding: 0px; margin: 0px;">
 
 <div class="cabezal">
-    <a href="#" class="btn" id="menuslide" style="position: absolute; top:10; left: 0;"><i class="fa fa-bars fa-lg"></i></a>
+    <h2 style="position: absolute; top:0; left: 0;"><a href="#" class="btn" id="menuslide"><i class="fa fa-bars fa-lg"></i></a></h2>
     <h1>Nuevo Sistema de Justicia Penal del Estado de San Luis Potosí</h1>
 </div>
 
@@ -31,19 +31,29 @@
 <div id="content" class="content">
     <a href="#" id="descarga">descarga1</a>
 <p>
-Dr. Fernando Toranzo Fern�ndez, Gobernador Constitucional
-del Estado Libre y Soberano de San Luis Potos�, a sus
+Dr. Fernando Toranzo Fernández, Gobernador Constitucional
+del Estado Libre y Soberano de San Luis Potosí, a sus
 habitantes sabed: Que el Congreso del Estado ha Decretado
 lo siguiente:
 </p> 
+<div>
+<input type="text" name="jugador" id="jugador" />
+<input type="text" name="club" id="club" />
+<button id="guardajugador" onclick="guardajugador()">Guardar</button>
+</div>
+<div id="listView" class="alert alert-warning">
+<ul id="SoccerPlayerList"></ul>
+</div>
 </div> 
         </div>
 
         <script type="text/javascript" src="cordova.js"></script>
         <script src="js/jquery.js"></script>
         <script src="js/bootstrap.min.js"></script>
+<!--
         <script type="text/javascript" src="js/index.js"></script>        
         <script type="text/javascript">app.initialize();</script>
+-->
         <script src="js/main.js"></script>
         
     </body>

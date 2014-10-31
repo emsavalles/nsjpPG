@@ -59,14 +59,41 @@ var app = {
 };
 
 function initDB(tx) {
-    alert('Init');
+    tx.executeSql('DROP TABLE IF EXISTS DEMO');
+
+    tx.executeSql('CREATE TABLE IF NOT EXISTS DEMO (id unique, data)');
+
+   tx.executeSql('INSERT INTO DEMO (id, data) VALUES (1, "First row")');
+   tx.executeSql('INSERT INTO DEMO (id, data) VALUES (2, "Second row")');
 }
-function dbError(e) {
-    alert("SQL ERROR"+e);
+
+function dbError(err) {
+alert("Error processing SQL: "+err.code);
 }
+
 function dbReady(){
-    alert("DB initialization done.");    
+//    tx.executeSql('SELECT * FROM DEMO',[],renderList,dbError);
+db.transaction(queryDB, dbError);
+//    alert("success!");  
 }
+
+function queryDB(tx) {
+    tx.executeSql('SELECT * FROM DEMO', [], renderList, dbError);
+}
+
+function renderList(tx,result){
+    var htmlString='';
+    var len=results.rows.length;
+    
+    for(var i=0;i<len;i++){
+        htmlString+='<li>'+result.rows.item(i).titulo+'</li>';
+    }
+    
+    $('#listView').html(htmlString);
+    //$('#listView').listView('refresh');
+    
+}
+
 /*
 function dbError(e) {
     console.log("SQL ERROR");
