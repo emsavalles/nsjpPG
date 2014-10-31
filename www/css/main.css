@@ -39,3 +39,5 @@ h1, .h1, h2, .h2, h3, .h3 {
 }
 #sidebar a{ color: #333; display:block}
 .img_side{ width:15%; margin-right: 5%;}
+.oculto{display:none;}
+.visible{ visibility: visible;}
