@@ -62,8 +62,11 @@ $(document).ready(function(){
                 ,[$('#jugador').val(), $('#club').val()]
                 ,//queryDB
                 function(tx){
-                    tx.executeSql('SELECT * FROM SoccerPlayer order by id desc');
-                    alert(1);
+                    tx.executeSql('SELECT * FROM SoccerPlayer order by id desc',[],querySuccess, errorCB);
+//                    alert(1);
+                    $('#jugador,#club').val('');
+//    tx.executeSql('SELECT * FROM SoccerPlayer order by id desc', [], querySuccess, errorCB);
+
                 }
                 ,errorCB);
         });
@@ -90,10 +93,10 @@ $('#descarga').on('click',function(){
 });
 
 function populateDB(tx) {
-    tx.executeSql('DROP TABLE IF EXISTS SoccerPlayer');
-    tx.executeSql('CREATE TABLE IF NOT EXISTS SoccerPlayer (id INTEGER PRIMARY KEY AUTOINCREMENT, Name TEXT NOT NULL, Club TEXT NOT NULL)');
-    tx.executeSql('INSERT INTO SoccerPlayer(Name,Club) VALUES ("Alexandre Pato", "AC Milan")');
-
+//   tx.executeSql('DROP TABLE IF EXISTS SoccerPlayer');
+   tx.executeSql('CREATE TABLE IF NOT EXISTS SoccerPlayer (id INTEGER PRIMARY KEY AUTOINCREMENT, Name TEXT NOT NULL, Club TEXT NOT NULL)');
+//   tx.executeSql('INSERT INTO SoccerPlayer(Name,Club) VALUES ("Alexandre Pato", "AC Milan")');
+/*
     var h=document.getElementById("guardajugador");
     h.addEventListener('click', function() {
         var nombre=document.getElementById('jugador').value;
@@ -104,9 +107,8 @@ function populateDB(tx) {
             ,[$('#jugador').val(), $('#club').val()]
             ,queryDB
             ,errorCB);
-        //alert(nombre+' '+ club)
-
     }, false);
+*/    
 }
 
 function queryDB(tx) {
@@ -119,7 +121,7 @@ function querySuccess(tx,result){
         var players = "";
         var len = result.rows.length;
         for (var i=0; i<len; i++){
-            players = players + '<li><a href="#"><p>'+result.rows.item(i).id+'<p><p class="record">'+result.rows.item(i).Name+'</p><p class="small">Club '+result.rows.item(i).Club+'</p></a></li>';
+            players = players + '<li><a href="#"><p class="record">'+result.rows.item(i).Name+'</p><p class="small">'+result.rows.item(i).Club+'</p></a></li>';
         }   
 
         playerlist.innerHTML = players;
