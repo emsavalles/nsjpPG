@@ -67,6 +67,25 @@ $(document).ready(function(){
                 ,errorCB);
         });
     });
+
+/////////////////////////////////
+$('#descarga').on('click',function(){
+   try{
+       handleDocumentWithURL(
+       function() {alert('success');},
+       function(error) {
+            alert('failure');
+            if(error == 53) {
+                 alert('No app that handles this file type.');
+                 }
+               },
+               'http://www.emsavalles.com/nsjp/pdf/562.pdf'
+       );
+       }
+   catch(e){
+       alert(e.message);
+       }
+});
 });
 
 function populateDB(tx) {
@@ -160,3 +179,4 @@ function testLogoutSheet() {
     };
     window.plugins.actionsheet.show(options, callback);
 };
+
