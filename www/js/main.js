@@ -56,76 +56,72 @@ $(document).ready(function(){
     });//busca.keyup
 
     $('#guardajugador').on('click',function(){
+        
+//Guarda pero genera error que evita vista
         db.transaction(function(tx) {
             tx.executeSql(
                 'INSERT INTO SoccerPlayer(Name, Club) VALUES (?,?)'
                 ,[$('#jugador').val(), $('#club').val()]
-                ,//queryDB
-                function(tx){
-                    tx.executeSql('SELECT * FROM SoccerPlayer order by id desc',[],querySuccess, errorCB);
-//                    alert(1);
-                    $('#jugador,#club').val('');
-//    tx.executeSql('SELECT * FROM SoccerPlayer order by id desc', [], querySuccess, errorCB);
-
+                ,function(tx){
+                        alert('Creado Corrrectamente');
+                        queryDB(tx);
                 }
                 ,errorCB);
         });
     });
 
-/////////////////////////////////
-$('#descarga').on('click',function(){
-   try{
-       handleDocumentWithURL(
-       function() {alert('success');},
-       function(error) {
-            alert('failure');
-            if(error == 53) {
-                 alert('No app that handles this file type.');
-                 }
-               },
-               'http://www.emsavalles.com/nsjp/pdf/562.pdf'
-       );
-       }
-   catch(e){
-       alert(e.message);
-       }
-});
+    /////////////////////////////////
+    $('#descarga').on('click',function(){
+       try{
+           handleDocumentWithURL(
+           function() {alert('success');},
+           function(error) {
+                alert('failure');
+                if(error == 53) {
+                     alert('No app that handles this file type.');
+                     }
+                   },
+                   'http://www.emsavalles.com/nsjp/pdf/562.pdf'
+           );
+           }
+       catch(e){
+           alert(e.message);
+           }
+    });//descarga
+////////////////
+    
+    $('#borra').on('click',function(){
+        alert(1);
+        db.transaction(function(tx){
+            tx.executeSql('DROP TABLE IF EXISTS SoccerPlayer');
+            tx.executeSql('CREATE TABLE IF NOT EXISTS SoccerPlayer (id INTEGER PRIMARY KEY AUTOINCREMENT, Name TEXT NOT NULL, Club TEXT NOT NULL)');
+           queryDB(tx); 
+        },errorCB);
+    });//borra
 });
 
 function populateDB(tx) {
 //   tx.executeSql('DROP TABLE IF EXISTS SoccerPlayer');
    tx.executeSql('CREATE TABLE IF NOT EXISTS SoccerPlayer (id INTEGER PRIMARY KEY AUTOINCREMENT, Name TEXT NOT NULL, Club TEXT NOT NULL)');
 //   tx.executeSql('INSERT INTO SoccerPlayer(Name,Club) VALUES ("Alexandre Pato", "AC Milan")');
-/*
-    var h=document.getElementById("guardajugador");
-    h.addEventListener('click', function() {
-        var nombre=document.getElementById('jugador').value;
-        var club=document.getElementById('club').value;
-
-        tx.executeSql(
-            'INSERT INTO SoccerPlayer(Name, Club) VALUES (?,?)'
-            ,[$('#jugador').val(), $('#club').val()]
-            ,queryDB
-            ,errorCB);
-    }, false);
-*/    
+ 
 }
 
 function queryDB(tx) {
-    $('#jugador,#club').val('');
     tx.executeSql('SELECT * FROM SoccerPlayer order by id desc', [], querySuccess, errorCB);
 }
 
 function querySuccess(tx,result){
+    var len = result.rows.length;
+    
+    $('#jugador,#club').val('');    
         var playerlist = document.getElementById("SoccerPlayerList");
         var players = "";
-        var len = result.rows.length;
         for (var i=0; i<len; i++){
             players = players + '<li><a href="#"><p class="record">'+result.rows.item(i).Name+'</p><p class="small">'+result.rows.item(i).Club+'</p></a></li>';
         }   
 
         playerlist.innerHTML = players;
-        $("#SoccerPlayerList").listview("refresh");
 }
 
 function errorCB(err) {
