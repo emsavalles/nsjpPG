@@ -63,6 +63,7 @@ $(document).ready(function(){
                 ,//queryDB
                 function(tx){
                     tx.executeSql('SELECT * FROM SoccerPlayer order by id desc');
+                    alert(1);
                 }
                 ,errorCB);
         });
@@ -89,9 +90,9 @@ $('#descarga').on('click',function(){
 });
 
 function populateDB(tx) {
-//    tx.executeSql('DROP TABLE IF EXISTS SoccerPlayer');
-//    tx.executeSql('CREATE TABLE IF NOT EXISTS SoccerPlayer (id INTEGER PRIMARY KEY AUTOINCREMENT, Name TEXT NOT NULL, Club TEXT NOT NULL)');
-//    tx.executeSql('INSERT INTO SoccerPlayer(Name,Club) VALUES ("Alexandre Pato", "AC Milan")');
+    tx.executeSql('DROP TABLE IF EXISTS SoccerPlayer');
+    tx.executeSql('CREATE TABLE IF NOT EXISTS SoccerPlayer (id INTEGER PRIMARY KEY AUTOINCREMENT, Name TEXT NOT NULL, Club TEXT NOT NULL)');
+    tx.executeSql('INSERT INTO SoccerPlayer(Name,Club) VALUES ("Alexandre Pato", "AC Milan")');
 
     var h=document.getElementById("guardajugador");
     h.addEventListener('click', function() {
