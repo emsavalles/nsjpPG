@@ -14,11 +14,12 @@ h1, .h1, h2, .h2, h3, .h3 {
     color:#fff;
     min-height:44px;
 }
+
 .content{
     padding:0 2%;
 }
 .cabezal h1{ text-align:center; margin-left:10% !important;}
-#menuslide {color:#fff}
+#menuslide {color:#fff; margin:2% 1%; cursor:pointer;}
 
 .bar {
     height: auto !important;
@@ -40,4 +41,4 @@ h1, .h1, h2, .h2, h3, .h3 {
 #sidebar a{ color: #333; display:block}
 .img_side{ width:15%; margin-right: 5%;}
 .oculto{display:none;}
-.visible{ visibility: visible;}
+.fdo{border-bottom:1px solid #E6E6E6;}

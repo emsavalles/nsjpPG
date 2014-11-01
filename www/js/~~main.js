@@ -1,13 +1,5 @@
 var db = "";
-if (!String.prototype.trim) {
-  (function(){
-    // Make sure we trim BOM and NBSP
-    var rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g;
-    String.prototype.trim = function () {
-      return this.replace(rtrim, "");
-    }
-  })();
-}
+|Zmb ¿
 $(document).ready(function(){
             $("#sidebar").css('left',"-200px");
             $('#menuslide').on('click',function(){
@@ -29,8 +21,39 @@ $(document).ready(function(){
             }                
             });
 
+    $('#ver').on('click',function(){
+        $.getJSON( "563.json", function( data ) {
+            var text="";
+            contenido=data.decreto.contenido.split(/\n/g);
+            contenido.forEach(function(i){
+                text+='<p>'+i+'</p>';
+            });
+            $('#parrafo').html(text);
+            //alert(contenido.length);
+        });//getJson
+    });//ver.click
+
+    $('#busca').on('keyup',function(){
+        $('#parrafo').find('p').removeClass('oculto');
+        text=$('#busca').val();
+        text=text.replace(/a/g,'[aàáâãäåÀÁÂÃÄÅÆA]');
+        text=text.replace(/e/g,'[eèéêëÈÉÊËE]');
+        text=text.replace(/i/g,'[iìíîïÌÍÎÏI]');
+        text=text.replace(/o/g,'[oòóôõöøÒÓÔÕÖØO]');
+        text=text.replace(/u/g,'[uùúûüÙÚÛÜU]');
+
+        var filtro=new RegExp(text,'gi');
 
 
+        $('#parrafo').find('p').each(function(i){
+            if($(this).html().trim()!=""){
+                if($(this).html().match(filtro)==null){
+                    $(this).addClass('oculto');
+                }
+            }
+        });
+
+    });//busca.keyup
 
     $('#guardajugador').on('click',function(){
         
@@ -75,26 +98,13 @@ $(document).ready(function(){
            queryDB(tx); 
         },errorCB);
     });//borra
-
-/////////////////////////////////////
-
-$.ajax({
-    url:'paginas/inicio.html',
-    encoding:"UTF-8",
-    dataType:"html", 
-    contentType: "text/html; charset=utf-8",
-    }).done(function(data){
-        $('#content').html(data);
-        funcionesvarias()
-    });
-
-    $('#sidebar a').on('click',function(i){
-        alert(i);
-    });    
-});//JQuery
+});
 
 function populateDB(tx) {
+//   tx.executeSql('DROP TABLE IF EXISTS SoccerPlayer');
    tx.executeSql('CREATE TABLE IF NOT EXISTS SoccerPlayer (id INTEGER PRIMARY KEY AUTOINCREMENT, Name TEXT NOT NULL, Club TEXT NOT NULL)');
+//   tx.executeSql('INSERT INTO SoccerPlayer(Name,Club) VALUES ("Alexandre Pato", "AC Milan")');
+ 
 }
 
 function queryDB(tx) {
@@ -132,6 +142,7 @@ function onDeviceReady() {
 ////////ACTION SHEET
 var callback = function(buttonIndex) {
     setTimeout(function() {
+        // like other Cordova plugins (prompt, confirm) the buttonIndex is 1-based (first button is index 1)
         alert('button index clicked: ' + buttonIndex);
     });
 };
@@ -168,47 +179,3 @@ function testLogoutSheet() {
     window.plugins.actionsheet.show(options, callback);
 };
 
-function funcionesvarias(){
-/////////////////////////////////////
-   $('#ver').on('click',function(){
-        $.getJSON( "562.json", function( data ) {
-            var text="";
-            contenido=data.decreto.contenido.split(/\n/g);
-            contenido.forEach(function(i){
-                if(i.trim()!=""){
-                    text+='<p>'+i+'</p>';
-                }
-            });
-            $('#parrafo').html(text);
-        });//getJson
-    });//ver.click
-/////////////////////////    
-    $('.busca').on('keyup',function(){
-        if($(this).val().length>0){
-        $('#parrafo').find('p').removeClass('oculto');
-        $('#parrafo').find('p').removeClass('fdo');
-        text=$('#busca').val();
-        text=text.replace(/a/g,'[aàáâãäåÀÁÂÃÄÅÆA]');
-        text=text.replace(/e/g,'[eèéêëÈÉÊËE]');
-        text=text.replace(/i/g,'[iìíîïÌÍÎÏI]');
-        text=text.replace(/o/g,'[oòóôõöøÒÓÔÕÖØO]');
-        text=text.replace(/u/g,'[uùúûüÙÚÛÜU]');
-
-        var filtro=new RegExp(text,'gi');
-        console.log(filtro);
-        $('#parrafo').find('p').each(function(i){
-                if($(this).html().match(filtro)==null){
-                    $(this).addClass('oculto');
-                }else{
-                   $(this).addClass('fdo'); 
-                }
-            
-        });
-        }else{
-                    $('#parrafo').find('p').removeClass('fdo');
-        }
-        
-});
-
-  
-}
