@@ -16,10 +16,10 @@ h1, .h1, h2, .h2, h3, .h3 {
 }
 
 .content{
-    padding:0 2%;
+    
 }
 .cabezal h1{ text-align:center; margin-left:10% !important;}
-#menuslide {color:#fff; margin:2% 1%; cursor:pointer;}
+#menuslide {color:#fff;font-size: 80%;}
 
 .bar {
     height: auto !important;
