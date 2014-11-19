@@ -12,13 +12,24 @@ h1, .h1, h2, .h2, h3, .h3 {
     margin: 0;
     background-color: #426660;
     color:#fff;
-    min-height:44px;
+    max-height:74px;
+    position:fixed;
+    z-index:1000;
+    width:100%;
 }
 
 .content{
-    
+    margin-top:2%;
+    clear:both;
 }
-.cabezal h1{ text-align:center; margin-left:10% !important;}
+#container{
+    position: relative; 
+    right: 0px; 
+    top: 75px;
+    transition: all 0.3s ease-in-out;
+    clear:both;
+}
+.cabezal h1{ text-align:center; margin-left:10% !important; font-size:1.5em;}
 #menuslide {color:#fff;font-size: 80%;}
 
 .bar {
@@ -36,7 +47,9 @@ h1, .h1, h2, .h2, h3, .h3 {
      width: 200px; 
      left: -200px;
       background-color: #ffffff; 
-      transition: all 0.5s ease-in-out;
+      transition: all 0.3s ease-in-out;
+    margin-top:10%;
+    clear:both;      
 }
 #sidebar a{ color: #333; display:block}
 .img_side{ width:15%; margin-right: 5%;}

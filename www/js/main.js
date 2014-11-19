@@ -16,8 +16,13 @@ $(document).ready(function(){
 
     $('#menuslide').on('click',function(){
         var sidebar = $("#sidebar");
-        console.log(parseInt(sidebar.css('left')));
-        if(sidebar.css('left') == "-200px"){}
+        if(parseInt(sidebar.css('left')) < "0"){
+            sidebar.css('left',"0px");
+            $("#container").css('left',"50%");
+        }else{
+           sidebar.css('left',"-50%");
+           $("#container").css('left',"0px"); 
+        }
     });
 /*    
             $("#sidebar").css('left',"-200px");
